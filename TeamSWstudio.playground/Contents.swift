@@ -8,6 +8,9 @@ for i in 0..<test.characters.count
 {
     result += Int((String(test[test.index(test.startIndex, offsetBy: i, limitedBy: test.endIndex)!]).unicodeScalars.first?.value)!)
 }
+
+var result2 = test
+
 print("\(result)")
 
 /*******************************************************************************************************************/
@@ -55,6 +58,10 @@ for i in intarr{
     ret = ret < i ? i : ret
 }
 
+var ret2 = intarr.sorted { $0 > $1 }
+
+
+print(ret2[0])
 print("\(ret)")
 /*******************************************************************************************************************/
 // Problem 5 - 1 ~ 10 사이 홀수들의 제곱의 합 구하기
@@ -65,3 +72,10 @@ var prod = 0
 for item in array{
     prod += item * item
 }
+
+var prod2 = array.filter { $0 % 2 == 1 } .reduce(0) { $0 + $1*$1 }
+
+print(prod2)
+print(prod)
+
+
